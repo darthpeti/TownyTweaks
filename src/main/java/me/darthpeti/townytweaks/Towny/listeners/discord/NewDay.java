@@ -16,7 +16,7 @@ public class NewDay implements Listener {
     public void onNewDay(NewDayEvent event){
         webhook.addEmbed(new DiscordWebhook.EmbedObject()
                 .setColor(new Color(255, 255, 0))
-                        .setTitle("A New Day has arrived")
+                .setTitle("A New Day has arrived")
                 .setDescription("Town Taxes Collected: " + event.getTownUpkeepCollected() + "\nNation Taxes Collected: " + event.getNationUpkeepCollected())
         );
 
