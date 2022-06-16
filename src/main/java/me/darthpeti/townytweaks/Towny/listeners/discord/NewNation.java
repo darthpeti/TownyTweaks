@@ -1,6 +1,5 @@
-package me.darthpeti.townytweaks.Towny.listeners.Discord;
+package me.darthpeti.townytweaks.Towny.listeners.discord;
 
-import com.palmergames.bukkit.towny.event.DeleteTownEvent;
 import com.palmergames.bukkit.towny.event.NewNationEvent;
 import me.darthpeti.townytweaks.Main;
 import me.darthpeti.townytweaks.Towny.util.DiscordWebhook;
@@ -26,7 +25,7 @@ public class NewNation implements Listener {
             DiscordWebhook webhook = new DiscordWebhook(Main.instance.getCustomConfig().getString("webhook-url"));
 
             webhook.addEmbed(new DiscordWebhook.EmbedObject()
-                    .setColor(new Color(255, 255, 255))
+                    .setColor(new Color(0, 255, 0))
                     .setDescription(kingName + " has made a new nation called " + nationName + "!")
             );
             try {

@@ -44,6 +44,14 @@ public class ConfigUtil {
         return Main.instance.getConfig().getBoolean("allow-pearl-in-besieged-towns");
     }
 
+    public static boolean disableTntcartBlockDamageBelowBanner(){
+        return Main.instance.getConfig().getBoolean("disable-tntcart-block-damage-below-banner");
+    }
+
+    public static boolean disableArmorDamageInArenaPlots(){
+        return Main.instance.getConfig().getBoolean("disable-armor-damage-in-arena-plots");
+    }
+
     public static TownBlockType checkPlot(String plotTypeName){
         //ARENA,BANK,COMMERCIAL,EMBASSY,FARM,INN,JAIL,RESIDENTIAL,WILDS
         if(plotTypeName.equalsIgnoreCase("ARENA")){
