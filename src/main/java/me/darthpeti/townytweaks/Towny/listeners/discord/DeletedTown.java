@@ -1,7 +1,6 @@
-package me.darthpeti.townytweaks.Towny.listeners.Discord;
+package me.darthpeti.townytweaks.Towny.listeners.discord;
 
-import com.palmergames.bukkit.towny.event.DeleteNationEvent;
-import com.palmergames.bukkit.towny.event.NewNationEvent;
+import com.palmergames.bukkit.towny.event.DeleteTownEvent;
 import me.darthpeti.townytweaks.Main;
 import me.darthpeti.townytweaks.Towny.util.DiscordWebhook;
 import org.bukkit.event.EventHandler;
@@ -10,23 +9,23 @@ import org.bukkit.event.Listener;
 import java.awt.*;
 import java.util.logging.Logger;
 
-public class DeletedNation implements Listener {
+public class DeletedTown implements Listener {
 
     private Logger logger;
 
-    public DeletedNation(Logger logger) {
+    public DeletedTown(Logger logger) {
         this.logger = logger;
     }
 
     @EventHandler
-    public void onTown(DeleteNationEvent event) {
-        if (Main.instance.getCustomConfig().getString("notification-nation-disband").equalsIgnoreCase("true")) {
-            String nationName = event.getNationName();
+    public void onTown(DeleteTownEvent event) {
+        if (Main.instance.getCustomConfig().getString("notification-town-delete").equalsIgnoreCase("true")) {
+            String townName = event.getTownName();
             DiscordWebhook webhook = new DiscordWebhook(Main.instance.getCustomConfig().getString("webhook-url"));
 
             webhook.addEmbed(new DiscordWebhook.EmbedObject()
-                    .setColor(new Color(255, 255, 255))
-                    .setDescription("The nation of " + nationName + " has disbanded!")
+                    .setColor(new Color(255, 0, 0))
+                    .setDescription("The town of " + townName + " has been deleted!")
             );
             try {
                 webhook.execute();

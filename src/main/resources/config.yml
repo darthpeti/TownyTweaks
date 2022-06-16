@@ -52,3 +52,10 @@ allow-pearl-in-besieged-towns: "false"
 spawn-trap-prevention-in-capitals: "false"
 # This was originally made for EarthMC to prevent nation spawn trapping where a player would be in a surprise pvp zone.
 # This feature was updated to work with SiegeWar at the request of EarthPol's Devs. This was originally mostly written by @Warriorrrr.
+
+disable-tntcart-block-damage-below-banner: "false"
+# This feature was developed on EarthPol as it's own seperate feature to mitigate the world damage that occured from multiple tnt minecarts dropping.
+# This will remove giant pits around the banner and only damage the blocks above it.
+
+disable-armor-damage-in-arena-plots: "false"
+# No one likes wasting their durability in Arena's. This feature will remove all armor durability affects

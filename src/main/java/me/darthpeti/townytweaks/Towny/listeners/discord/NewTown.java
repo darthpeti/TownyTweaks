@@ -1,4 +1,4 @@
-package me.darthpeti.townytweaks.Towny.listeners.Discord;
+package me.darthpeti.townytweaks.Towny.listeners.discord;
 
 import com.palmergames.bukkit.towny.event.NewTownEvent;
 import me.darthpeti.townytweaks.Main;
@@ -27,7 +27,7 @@ public class NewTown implements Listener {
             DiscordWebhook webhook = new DiscordWebhook(Main.instance.getCustomConfig().getString("webhook-url"));
 
             webhook.addEmbed(new DiscordWebhook.EmbedObject()
-                    .setColor(new Color(255, 255, 255))
+                    .setColor(new Color(0, 255, 0))
                     .setDescription(mayorName + " has created a new town called " + townName + "!")
             );
             try {
